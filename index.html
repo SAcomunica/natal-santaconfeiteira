@@ -167,13 +167,13 @@ footer{padding:56px 22px}
 #splash .door.r{box-shadow:-8px 0 18px -8px rgba(0,0,0,.6)}
 #splash .veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 46%,rgba(0,0,0,0) 0%,rgba(0,0,0,.45) 75%),linear-gradient(rgba(10,14,10,.55),rgba(10,14,10,0) 28%,rgba(10,14,10,0) 70%,rgba(10,14,10,.5));pointer-events:none;transition:opacity 1.2s ease}
 #splash .logo{position:absolute;top:7vh;left:50%;transform:translateX(-50%);width:min(230px,52vw);opacity:.95;transition:opacity .8s ease;pointer-events:none}
-#splash .center{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:22px;pointer-events:none}
+#splash .center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:90%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;pointer-events:none}
 #splash .seal{width:clamp(120px,26vw,170px);filter:drop-shadow(0 14px 18px rgba(0,0,0,.5)) drop-shadow(0 3px 4px rgba(0,0,0,.4));animation:seal-in 1.2s cubic-bezier(.3,1.35,.45,1) .3s both;transition:transform .7s cubic-bezier(.3,0,.2,1),opacity .9s ease}
 #splash .seal-wrap{position:relative}
 #splash .seal-wrap::after{content:"";position:absolute;inset:14%;border-radius:50%;background:linear-gradient(115deg,transparent 35%,rgba(255,246,215,.6) 50%,transparent 65%);background-size:250% 100%;background-position:150% 0;mix-blend-mode:soft-light;animation:shine 4.5s ease-in-out 1.6s infinite}
 @keyframes seal-in{0%{opacity:0;transform:scale(1.7) rotate(-14deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
 @keyframes shine{0%{background-position:150% 0}45%,100%{background-position:-60% 0}}
-#splash .tap{font-family:Gloock,serif;font-size:clamp(20px,4.4vw,28px);color:#F6EBCB;text-shadow:0 2px 14px rgba(0,0,0,.75);letter-spacing:.02em;animation:pulse 2.4s ease-in-out 1.4s infinite both;transition:opacity .5s ease}
+#splash .tap{text-align:center;padding:10px 26px;border-radius:999px;background:rgba(20,26,20,.38);backdrop-filter:blur(3px);font-family:Gloock,serif;font-size:clamp(20px,4.4vw,28px);color:#F6EBCB;text-shadow:0 2px 14px rgba(0,0,0,.75);letter-spacing:.02em;animation:pulse 2.4s ease-in-out 1.4s infinite both;transition:opacity .5s ease}
 #splash .tap small{display:block;text-align:center;font-family:Raleway,sans-serif;font-size:10px;letter-spacing:.34em;text-transform:uppercase;margin-top:6px;opacity:.85}
 @keyframes pulse{0%,100%{opacity:.75}50%{opacity:1}}
 #splash.opening .tap,#splash.opening .logo{opacity:0;animation:none}
@@ -217,14 +217,14 @@ footer{background:var(--creme)}
 </style>
 </head>
 <body class="locked cine-pre">
-<div id="splash" role="button" aria-label="Toque para se encantar e abrir o site">
+<div id="splash" role="button" aria-label="Toque e encante-se para abrir o site">
   <div class="door l"><div class="ph"></div></div>
   <div class="door r"><div class="ph"></div></div>
   <div class="veil"></div>
   <img class="logo" src="img/wordmark_cream.png" alt="Santa Confeiteira">
   <div class="center">
     <div class="seal-wrap"><img class="seal" src="img/selo.png" alt=""></div>
-    <div class="tap">Toque para se encantar<small>Natal 2026</small></div>
+    <div class="tap">Toque e encante-se<small>Natal 2026</small></div>
   </div>
 </div>
 <audio id="jingle" src="audio/jingle-natal.mp3" loop preload="auto"></audio>
