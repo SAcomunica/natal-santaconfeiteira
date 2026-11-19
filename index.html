@@ -42,7 +42,7 @@ a{color:inherit}
 .top .sm{display:none}
 @media (max-width:640px){.top .lg{display:none}.top .sm{display:inline}}
 .top .btn{white-space:nowrap}
-@media (max-width:520px){.top .btn{padding:8px 12px;font-size:12px}.top img{height:26px}}
+@media (max-width:520px){.top .btn{padding:8px 11px;font-size:12px}.top img{height:24px}.top .wrap{padding:0 12px}.top-ctas{gap:6px}}
 @media (max-width:820px){.top nav{display:none}}
 
 /* hero */
@@ -149,19 +149,100 @@ footer{padding:56px 22px}
 /* floating whatsapp */
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
 .wa-float svg{width:30px;height:30px;color:#fff}
+
+.home-btn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--verde);border:2px solid var(--verde);border-radius:999px;padding:8px 14px 8px 11px;font-size:13px;font-weight:700;letter-spacing:.04em;white-space:nowrap;transition:background .15s,color .15s}
+.home-btn:hover{background:var(--verde);color:var(--creme)}
+.home-btn svg{width:17px;height:17px}
+.top-left{display:flex;align-items:center;gap:14px}
+@media (max-width:640px){.home-btn{padding:8px;border-width:1.5px}.home-btn span{display:none}.top-left{gap:8px}}
+/* ===== ABERTURA ===== */
+#splash{position:fixed;inset:0;z-index:100;cursor:pointer;overflow:hidden;background:#0d120c}
+#splash .door{position:absolute;top:0;bottom:0;width:50%;overflow:hidden;will-change:transform}
+#splash .door.l{left:0}
+#splash .door.r{right:0}
+#splash .door .ph{position:absolute;top:0;width:100vw;height:100%;background:#0d120c url(img/splash-loja.jpg) center/cover no-repeat}
+#splash .door.l .ph{left:0}
+#splash .door.r .ph{right:0}
+#splash .door.l{box-shadow:8px 0 18px -8px rgba(0,0,0,.6)}
+#splash .door.r{box-shadow:-8px 0 18px -8px rgba(0,0,0,.6)}
+#splash .veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 46%,rgba(0,0,0,0) 0%,rgba(0,0,0,.45) 75%),linear-gradient(rgba(10,14,10,.55),rgba(10,14,10,0) 28%,rgba(10,14,10,0) 70%,rgba(10,14,10,.5));pointer-events:none;transition:opacity 1.2s ease}
+#splash .logo{position:absolute;top:7vh;left:50%;transform:translateX(-50%);width:min(230px,52vw);opacity:.95;transition:opacity .8s ease;pointer-events:none}
+#splash .center{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:22px;pointer-events:none}
+#splash .seal{width:clamp(120px,26vw,170px);filter:drop-shadow(0 14px 18px rgba(0,0,0,.5)) drop-shadow(0 3px 4px rgba(0,0,0,.4));animation:seal-in 1.2s cubic-bezier(.3,1.35,.45,1) .3s both;transition:transform .7s cubic-bezier(.3,0,.2,1),opacity .9s ease}
+#splash .seal-wrap{position:relative}
+#splash .seal-wrap::after{content:"";position:absolute;inset:14%;border-radius:50%;background:linear-gradient(115deg,transparent 35%,rgba(255,246,215,.6) 50%,transparent 65%);background-size:250% 100%;background-position:150% 0;mix-blend-mode:soft-light;animation:shine 4.5s ease-in-out 1.6s infinite}
+@keyframes seal-in{0%{opacity:0;transform:scale(1.7) rotate(-14deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes shine{0%{background-position:150% 0}45%,100%{background-position:-60% 0}}
+#splash .tap{font-family:Gloock,serif;font-size:clamp(20px,4.4vw,28px);color:#F6EBCB;text-shadow:0 2px 14px rgba(0,0,0,.75);letter-spacing:.02em;animation:pulse 2.4s ease-in-out 1.4s infinite both;transition:opacity .5s ease}
+#splash .tap small{display:block;text-align:center;font-family:Raleway,sans-serif;font-size:10px;letter-spacing:.34em;text-transform:uppercase;margin-top:6px;opacity:.85}
+@keyframes pulse{0%,100%{opacity:.75}50%{opacity:1}}
+#splash.opening .tap,#splash.opening .logo{opacity:0;animation:none}
+#splash.opening .seal{animation:none}
+#splash.opening .seal{transform:translateY(-10px) scale(1.12) rotate(-4deg)}
+#splash.opening.go .seal{opacity:0;transform:translateY(-30px) scale(1.4) rotate(-8deg)}
+#splash.go .door{transition:transform 2.6s cubic-bezier(.62,.02,.28,1)}
+#splash.go .door.l{transform:translateX(-102%)}
+#splash.go .door.r{transform:translateX(102%)}
+#splash.go .veil{opacity:0}
+#splash.go{background:transparent}
+#splash.done{opacity:0;transition:opacity .8s ease;pointer-events:none}
+body.locked{overflow:hidden}
+body.cine-pre .hero .wrap{transform:scale(1.08);filter:blur(10px);opacity:.4}
+body.cine-run .hero .wrap{transition:transform 2.8s cubic-bezier(.22,.61,.2,1),filter 2.4s ease,opacity 2s ease}
+
+/* ===== MÚSICA ===== */
+.music{position:fixed;left:18px;bottom:18px;z-index:60;width:52px;height:52px;border-radius:50%;border:2px solid var(--bege);background:var(--vinho);color:var(--bege);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.25);opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.music.show{opacity:1;transform:none}
+.music svg{width:22px;height:22px}
+.music .off{display:none}
+.music[aria-pressed="false"] .on{display:none}
+.music[aria-pressed="false"] .off{display:block}
+.music .eq{position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(239,230,204,.5);animation:ring 2s ease-out infinite}
+.music[aria-pressed="false"] .eq{display:none}
+@keyframes ring{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.35);opacity:0}}
+
+/* ===== SEÇÕES EMPILHADAS ===== */
+.stack{position:sticky;will-change:transform}
+.stack-shade{position:absolute;inset:0;background:#0d120c;opacity:0;pointer-events:none;z-index:5;border-radius:inherit}
+#destaque,#como{background:var(--creme)}
+#cardapio{background:#F3EBD6;padding-top:0}
+#cardapio .band{margin-bottom:84px}
+.stack+.stack,.stack+section{box-shadow:0 -18px 40px rgba(13,18,12,.18)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.2,1)}
+.reveal.vis{opacity:1;transform:none}
+.final,footer{position:relative;z-index:2}
+footer{background:var(--creme)}
+.final{box-shadow:0 -18px 40px rgba(13,18,12,.18)}
+@media (prefers-reduced-motion: reduce){.stack{position:relative}.reveal{opacity:1;transform:none}}
 </style>
 </head>
-<body>
+<body class="locked cine-pre">
+<div id="splash" role="button" aria-label="Toque para se encantar e abrir o site">
+  <div class="door l"><div class="ph"></div></div>
+  <div class="door r"><div class="ph"></div></div>
+  <div class="veil"></div>
+  <img class="logo" src="img/wordmark_cream.png" alt="Santa Confeiteira">
+  <div class="center">
+    <div class="seal-wrap"><img class="seal" src="img/selo.png" alt=""></div>
+    <div class="tap">Toque para se encantar<small>Natal 2026</small></div>
+  </div>
+</div>
+<audio id="jingle" src="audio/jingle-natal.mp3" loop preload="auto"></audio>
+<button class="music" id="musicBtn" aria-pressed="false" aria-label="Ligar ou desligar a música">
+  <span class="eq"></span>
+  <svg class="on" viewBox="0 0 24 24" fill="currentColor"><path d="M9 18.5a2.5 2.5 0 1 1-2-2.45V6.2l11-2.2v11.5a2.5 2.5 0 1 1-2-2.45V7.1l-7 1.4z"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18.5a2.5 2.5 0 1 1-2-2.45V6.2l11-2.2v11.5a2.5 2.5 0 1 1-2-2.45" fill="currentColor" stroke="none"/><path d="M3 3l18 18"/></svg>
+</button>
 
 <header class="top">
   <div class="wrap">
-    <a href="#inicio"><img src="img/wordmark_green.png" alt="Santa Confeiteira"></a>
+    <div class="top-left"><a class="home-btn" href="index.html" aria-label="Voltar para a página inicial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg><span>Início</span></a><a href="index.html"><img src="img/wordmark_green.png" alt="Santa Confeiteira"></a></div>
     <nav><a href="#destaque">Bolo Árvore</a><a href="#cardapio">Cardápio</a><a href="#embalagens">Presentes</a><a href="#como">Como encomendar</a></nav>
     <div class="top-ctas"><a class="btn btn-ghost" href="cardapio.html"><span class="lg">Ver cardápio completo</span><span class="sm">Cardápio</span></a><a class="btn" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener">Encomendar</a></div>
   </div>
 </header>
 
-<section class="hero" id="inicio">
+<section class="hero stack" id="inicio">
   <div class="bar argyle"></div>
   <div class="wrap">
     <div>
@@ -181,10 +262,10 @@ footer{padding:56px 22px}
   <div class="bar argyle"></div>
 </section>
 
-<section class="s" id="destaque">
+<section class="s stack" id="destaque">
   <div class="wrap">
-    <div class="s-head"><span class="kicker">A estrela da ceia</span><h2>Bolo Árvore</h2></div>
-    <div class="dest">
+    <div class="s-head reveal"><span class="kicker">A estrela da ceia</span><h2>Bolo Árvore</h2></div>
+    <div class="dest reveal">
       <div class="ph"><img src="img/bolo-arvore.jpg" alt="Bolo Árvore"><span class="badge">DESTAQUE DE NATAL</span></div>
       <div class="info">
         <h3>Bolo Árvore</h3>
@@ -202,12 +283,11 @@ footer{padding:56px 22px}
   </div>
 </section>
 
-<div class="band dogs" aria-hidden="true"></div>
-
-<section class="s" id="cardapio">
+<section class="s stack" id="cardapio">
+  <div class="band dogs" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="s-head"><span class="kicker">Para a ceia e para presentear</span><h2>Do nosso cardápio</h2><p>Alguns dos favoritos deste Natal. Veja todos os sabores, tamanhos e valores no cardápio completo.</p></div>
-    <div class="cats">
+    <div class="s-head reveal"><span class="kicker">Para a ceia e para presentear</span><h2>Do nosso cardápio</h2><p>Alguns dos favoritos deste Natal. Veja todos os sabores, tamanhos e valores no cardápio completo.</p></div>
+    <div class="cats reveal">
       <article class="cat"><div class="im"><img src="img/panetone.jpg" alt="Chocotone"></div><div class="bd"><h3>Chocotone · 900g</h3><p>Creme de pistache, Nutella Crispy, Avelã branca, Brigadeiro, Doce de leite e Camafeu.</p><div class="from">a partir de <b>R$ 120,00</b></div></div></article>
       <article class="cat"><div class="im"><img src="img/chocotone.jpg" alt="Mini Chocotone"></div><div class="bd"><h3>Mini Chocotone · 170g</h3><p>Creme de pistache, Nutella Crispy, Avelã branca, Brigadeiro e Doce de leite, no saquinho ou na caixinha.</p><div class="from">a partir de <b>R$ 39,00</b></div></div></article>
       <article class="cat"><div class="im"><img src="img/mil-folhas.jpg" alt="Mil Folhas de Morango"></div><div class="bd"><h3>Sobremesas</h3><p>Mil Folhas de Morango, Pavê, Gianduia <span class="new">NOVO</span>, Pudim e Cocada com Amêndoa <span class="new">NOVO</span>.</p><div class="from">a partir de <b>R$ 98,00</b></div></div></article>
@@ -219,10 +299,10 @@ footer{padding:56px 22px}
   </div>
 </section>
 
-<section class="s emb-s" id="embalagens">
+<section class="s emb-s stack" id="embalagens">
   <div class="wrap">
-    <div class="s-head"><span class="kicker">Para presentear</span><h2>Presentes que encantam</h2><p>Rochedos, Biju e Bombons em três embalagens: escolha a que combina com quem vai receber.</p></div>
-    <div class="embs">
+    <div class="s-head reveal"><span class="kicker">Para presentear</span><h2>Presentes que encantam</h2><p>Rochedos, Biju e Bombons em três embalagens: escolha a que combina com quem vai receber.</p></div>
+    <div class="embs reveal">
       <figure><img src="img/emb-caixa.jpg" alt="Caixinha de papel"><figcaption>Caixinha de papel</figcaption></figure>
       <figure><img src="img/emb-vidro.jpg" alt="Vidro"><figcaption>Vidro</figcaption></figure>
       <figure><img src="img/emb-saquinho.jpg" alt="Saquinho de tecido"><figcaption>Saquinho de tecido</figcaption></figure>
@@ -231,10 +311,10 @@ footer{padding:56px 22px}
   </div>
 </section>
 
-<section class="s" id="como">
+<section class="s stack" id="como">
   <div class="wrap">
-    <div class="s-head"><span class="kicker">Simples assim</span><h2>Como encomendar</h2></div>
-    <div class="steps">
+    <div class="s-head reveal"><span class="kicker">Simples assim</span><h2>Como encomendar</h2></div>
+    <div class="steps reveal">
       <div class="step"><h3>Escolha</h3><p>Veja o cardápio completo e separe os itens, sabores e tamanhos que você quer.</p></div>
       <div class="step"><h3>Faça o pedido online</h3><p>Monte sua encomenda direto na nossa <a href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" style="color:var(--vinho);font-weight:700">página de pedidos</a>.</p></div>
       <div class="step"><h3>Ficou com dúvida?</h3><p>Fale com a gente no <a href="https://wa.me/5511969097957?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20card%C3%A1pio%20de%20Natal%202026." target="_blank" rel="noopener" style="color:var(--vinho);font-weight:700">WhatsApp (11) 9.6909.7957</a>.</p></div>
@@ -264,5 +344,59 @@ footer{padding:56px 22px}
 </footer>
 
 
+<script>
+(function(){
+  var splash=document.getElementById('splash'), audio=document.getElementById('jingle'), btn=document.getElementById('musicBtn');
+  var opened=false;
+  audio.volume=0.45;
+  var seen=false; try{seen=sessionStorage.getItem('sc_aberto')==='1'}catch(e){}
+  if(seen){ splash.style.display='none'; document.body.classList.remove('locked','cine-pre'); btn.classList.add('show'); }
+  function setBtn(on){btn.setAttribute('aria-pressed',on?'true':'false')}
+  function play(){var p=audio.play(); if(p&&p.then){p.then(function(){setBtn(true)}).catch(function(){setBtn(false)})}}
+  function finish(){
+    splash.classList.add('done'); document.body.classList.remove('locked');
+    btn.classList.add('show');
+    setTimeout(function(){splash.style.display='none'},850);
+  }
+  splash.addEventListener('click',function(){
+    if(opened){finish();return}
+    opened=true; play(); try{sessionStorage.setItem('sc_aberto','1')}catch(e){}
+    splash.classList.add('opening');
+    document.body.classList.add('cine-run');
+    setTimeout(function(){splash.classList.add('go'); document.body.classList.remove('cine-pre')},450);
+    setTimeout(finish,2900);
+    setTimeout(function(){document.body.classList.remove('cine-run')},5200);
+  });
+  btn.addEventListener('click',function(){ if(audio.paused){play()} else {audio.pause(); setBtn(false)} });
+
+  // revelar ao rolar
+  var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el)});
+
+  // seções empilhadas
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var stacks=[].slice.call(document.querySelectorAll('.stack'));
+  stacks.forEach(function(el){var sh=document.createElement('div');sh.className='stack-shade';el.appendChild(sh);el._sh=sh});
+  function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
+  function setTops(){var vh=innerHeight; stacks.forEach(function(el){el.style.top=Math.min(0,vh-el.offsetHeight)+'px'})}
+  var tick=false;
+  function update(){
+    tick=false; var vh=innerHeight;
+    stacks.forEach(function(el){
+      var next=el.nextElementSibling; while(next&&next.tagName==='SCRIPT')next=next.nextElementSibling; if(!next)return;
+      var p=clamp((vh-next.getBoundingClientRect().top)/vh,0,1);
+      var top=el.getBoundingClientRect().top;
+      el.style.transformOrigin='50% '+(-top+vh/2)+'px';
+      el.style.transform=p>0?'scale('+(1-.07*p)+')':'';
+      el.style.borderRadius=p>0?(28*p)+'px':'';
+      el._sh.style.opacity=(.45*p).toFixed(3);
+    });
+  }
+  addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(update)}},{passive:true});
+  addEventListener('resize',function(){setTops();update()});
+  addEventListener('load',function(){setTops();update()});
+  setTops(); update();
+})();
+</script>
 </body>
 </html>
