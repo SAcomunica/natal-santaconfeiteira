@@ -124,7 +124,7 @@ section.block{max-width:1100px;margin:0 auto;padding:44px 20px 56px}
 .table-card .note{font-size:13.5px;color:#6a665a;margin-bottom:12px}
 table{width:100%;border-collapse:collapse;font-size:14.5px}
 th{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--vinho);text-align:left;padding:8px 6px;border-bottom:2px solid var(--verde)}
-th.r,td.r{text-align:right}
+th.r,td.r{text-align:right;white-space:nowrap}
 td{padding:10px 6px;border-bottom:1px solid #e6dfc8;vertical-align:top}
 td b{color:var(--verde)}
 tr:last-child td{border-bottom:0}
@@ -167,6 +167,14 @@ nav{top:60px!important}
 .ig-btn:hover{background:transparent;color:var(--creme)}
 .ig-btn svg{width:22px;height:22px}
 @media (max-width:760px){.foot{grid-template-columns:1fr!important;text-align:center;justify-items:center;gap:22px!important}.foot>div{display:flex;flex-direction:column;align-items:center}.foot .wm{margin-left:auto;margin-right:auto}.foot .ig-block{order:2}}
+.card{position:relative}
+.buy{position:absolute;right:16px;bottom:16px;width:46px;height:46px;border-radius:50%;background:var(--vinho);color:var(--creme);display:grid;place-items:center;box-shadow:0 4px 12px rgba(142,27,37,.3);transition:transform .15s,background .15s;z-index:2}
+.buy:hover{background:var(--vinho2);transform:scale(1.07)}
+.buy svg{width:22px;height:22px}
+.buy-sm{position:static;width:36px;height:36px;box-shadow:none}
+.buy-sm svg{width:18px;height:18px}
+td.bcol,th.bcol{width:44px;text-align:right;vertical-align:middle;padding-left:4px}
+.card .price-big,.card .prices{padding-right:56px}
 </style>
 </head>
 <body>
@@ -218,7 +226,7 @@ nav{top:60px!important}
           <li><span>Na caixinha de papel</span><b>R$ 55,00</b></li>
         </ul>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Rochedos 110g" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/biju.jpg" alt="Biju com coberturas"></div>
       <div class="bd">
@@ -230,7 +238,7 @@ nav{top:60px!important}
           <li><span>Na caixinha de papel</span><b>R$ 48,00</b></li>
         </ul>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Biju 75g" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/bombom.jpg" alt="Bombons recheados"></div>
       <div class="bd">
@@ -242,7 +250,7 @@ nav{top:60px!important}
           <li><span>Na caixinha de papel</span><b>R$ 65,00</b></li>
         </ul>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Bombom 135g" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
   </div>
   <h3 class="sub-h">Escolha a embalagem</h3>
   <div class="emb">
@@ -264,13 +272,13 @@ nav{top:60px!important}
     <div class="table-card">
       <h3>Mini Chocotone <span class="w">170g</span></h3>
       <table>
-        <thead><tr><th>Sabor</th><th>Validade</th><th class="r">Saquinho</th><th class="r">Caixinha</th></tr></thead>
+        <thead><tr><th>Sabor</th><th>Validade</th><th class="r">Saquinho</th><th class="r">Caixinha</th><th class="bcol"></th></tr></thead>
         <tbody>
-          <tr><td><b>Creme de pistache</b></td><td>20 dias</td><td class="r">R$ 45,00</td><td class="r">R$ 42,00</td></tr>
-          <tr><td><b>Nutella Crispy</b></td><td>20 dias</td><td class="r">R$ 45,00</td><td class="r">R$ 42,00</td></tr>
-          <tr><td><b>Avelã branca</b></td><td>20 dias</td><td class="r">R$ 45,00</td><td class="r">R$ 42,00</td></tr>
-          <tr><td><b>Brigadeiro</b></td><td>7 dias</td><td class="r">R$ 42,00</td><td class="r">R$ 39,00</td></tr>
-          <tr><td><b>Doce de leite</b></td><td>10 dias</td><td class="r">R$ 42,00</td><td class="r">R$ 39,00</td></tr>
+          <tr><td><b>Creme de pistache</b></td><td>20 dias</td><td class="r">R$ 45,00</td><td class="r">R$ 42,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Creme de pistache" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Nutella Crispy</b></td><td>20 dias</td><td class="r">R$ 45,00</td><td class="r">R$ 42,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Nutella Crispy" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Avelã branca</b></td><td>20 dias</td><td class="r">R$ 45,00</td><td class="r">R$ 42,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Avelã branca" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Brigadeiro</b></td><td>7 dias</td><td class="r">R$ 42,00</td><td class="r">R$ 39,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Brigadeiro" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Doce de leite</b></td><td>10 dias</td><td class="r">R$ 42,00</td><td class="r">R$ 39,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Doce de leite" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
         </tbody>
       </table>
     </div>
@@ -288,7 +296,7 @@ nav{top:60px!important}
         <p>Brownie recheado de Nutella.</p>
         <div class="price-big">R$ 12,00</div>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Brownie 70g" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/palha.jpg" alt="Palha Biscoff"></div>
       <div class="bd">
@@ -296,7 +304,7 @@ nav{top:60px!important}
         <p>Palha italiana feita com bolacha Biscoff Lotus.</p>
         <div class="price-big">R$ 12,00</div>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Palha Biscoff 60g" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/cannoli.jpg" alt="Cannoli recheados"></div>
       <div class="bd">
@@ -304,7 +312,7 @@ nav{top:60px!important}
         <p>Sabores: Nutella, Pistache crocante ou Kinder.</p>
         <div class="price-big">R$ 19,00</div>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Cannoli 50g" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/caixa25.jpg" alt="Caixa com 25 doces natalinos"></div>
       <div class="bd">
@@ -312,7 +320,7 @@ nav{top:60px!important}
         <p>Brigadeiro ao leite, Explosão de pistache, Nutella Crispy, Noz e Bombom de coco.</p>
         <div class="price-big">R$ 149,00</div>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Caixa com 25 Doces" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
   </div>
 </section>
 
@@ -327,14 +335,14 @@ nav{top:60px!important}
     <div class="table-card">
       <h3>Chocotone <span class="w">900g</span></h3>
       <table>
-        <thead><tr><th>Sabor</th><th>Validade</th><th class="r">Valor</th></tr></thead>
+        <thead><tr><th>Sabor</th><th>Validade</th><th class="r">Valor</th><th class="bcol"></th></tr></thead>
         <tbody>
-          <tr><td><b>Creme de pistache</b></td><td>20 dias</td><td class="r">R$ 170,00</td></tr>
-          <tr><td><b>Nutella Crispy</b></td><td>20 dias</td><td class="r">R$ 150,00</td></tr>
-          <tr><td><b>Avelã branca</b></td><td>20 dias</td><td class="r">R$ 150,00</td></tr>
-          <tr><td><b>Brigadeiro</b></td><td>7 dias</td><td class="r">R$ 120,00</td></tr>
-          <tr><td><b>Doce de leite</b></td><td>10 dias</td><td class="r">R$ 120,00</td></tr>
-          <tr><td><b>Camafeu</b></td><td>7 dias</td><td class="r">R$ 120,00</td></tr>
+          <tr><td><b>Creme de pistache</b></td><td>20 dias</td><td class="r">R$ 170,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Creme de pistache" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Nutella Crispy</b></td><td>20 dias</td><td class="r">R$ 150,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Nutella Crispy" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Avelã branca</b></td><td>20 dias</td><td class="r">R$ 150,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Avelã branca" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Brigadeiro</b></td><td>7 dias</td><td class="r">R$ 120,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Brigadeiro" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Doce de leite</b></td><td>10 dias</td><td class="r">R$ 120,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Doce de leite" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Camafeu</b></td><td>7 dias</td><td class="r">R$ 120,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Camafeu" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
         </tbody>
       </table>
     </div>
@@ -369,7 +377,7 @@ nav{top:60px!important}
           <li><span>Tam G · 20 porções</span><b>R$ 260,00</b></li>
         </ul>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Mil Folhas de Morango" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/pave.jpg" alt="Pavê tradicional"></div>
       <div class="bd">
@@ -380,7 +388,7 @@ nav{top:60px!important}
           <li><span>Tam G · 20 porções</span><b>R$ 240,00</b></li>
         </ul>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Pavê Tradicional" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card nophoto">
       <div class="bd">
         <h3><span>Gianduia <span class="new">NOVO</span></span></h3>
@@ -390,7 +398,7 @@ nav{top:60px!important}
           <li><span>Tam G · 20 porções</span><b>R$ 260,00</b></li>
         </ul>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Gianduia NOVO" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/pudim.jpg" alt="Pudim tradicional"></div>
       <div class="bd">
@@ -398,7 +406,7 @@ nav{top:60px!important}
         <p>O clássico que não pode faltar na mesa de Natal.</p>
         <div class="price-big">R$ 98,00</div>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Pudim Tradicional" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card">
       <div class="ph"><img src="img/cocada.jpg" alt="Cocada com amêndoa"></div>
       <div class="bd">
@@ -406,7 +414,7 @@ nav{top:60px!important}
         <p>Cocada cremosa na panelinha com amêndoa.</p>
         <div class="price-big">R$ 140,00</div>
       </div>
-    </article>
+    <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Cocada com Amêndoa NOVO 12 porções" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
   </div>
 </section>
 
@@ -426,17 +434,17 @@ nav{top:60px!important}
       <h3>Tortas Doces</h3>
       <p class="note">Todas as tortas servem de 12 a 15 porções.</p>
       <table>
-        <thead><tr><th>Sabor</th><th class="r">Valor</th></tr></thead>
+        <thead><tr><th>Sabor</th><th class="r">Valor</th><th class="bcol"></th></tr></thead>
         <tbody>
-          <tr><td><b>Limão</b></td><td class="r">R$ 140,00</td></tr>
-          <tr><td><b>Chocolate</b></td><td class="r">R$ 170,00</td></tr>
-          <tr><td><b>Chocolate com compota de morango</b></td><td class="r">R$ 190,00</td></tr>
-          <tr><td><b>Chocolate com compota de morango e fruta fresca</b></td><td class="r">R$ 230,00</td></tr>
-          <tr><td><b>Cheesecake</b></td><td class="r">R$ 150,00</td></tr>
-          <tr><td><b>Cheesecake com fruta fresca</b></td><td class="r">R$ 190,00</td></tr>
-          <tr><td><b>Holandesa</b></td><td class="r">R$ 150,00</td></tr>
-          <tr><td><b>Holandesa de nozes</b></td><td class="r">R$ 150,00</td></tr>
-          <tr><td><b>Camafeu</b></td><td class="r">R$ 130,00</td></tr>
+          <tr><td><b>Limão</b></td><td class="r">R$ 140,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Limão" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Chocolate</b></td><td class="r">R$ 170,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Chocolate" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Chocolate com compota de morango</b></td><td class="r">R$ 190,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Chocolate com compota de morango" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Chocolate com compota de morango e fruta fresca</b></td><td class="r">R$ 230,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Chocolate com compota de morango e fruta fresca" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Cheesecake</b></td><td class="r">R$ 150,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Cheesecake" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Cheesecake com fruta fresca</b></td><td class="r">R$ 190,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Cheesecake com fruta fresca" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Holandesa</b></td><td class="r">R$ 150,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Holandesa" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Holandesa de nozes</b></td><td class="r">R$ 150,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Holandesa de nozes" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
+          <tr><td><b>Camafeu</b></td><td class="r">R$ 130,00</td><td class="bcol"><a class="buy buy-sm" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Camafeu" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></td></tr>
         </tbody>
       </table>
     </div>
@@ -450,7 +458,7 @@ nav{top:60px!important}
             <li><span>Chocolate e Maracujá <span class="new">NOVO</span></span><b>R$ 180,00</b></li>
           </ul>
         </div>
-      </article>
+      <a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Mousse no Vidro 12 porções" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     </div>
   </div>
 </section>
@@ -463,27 +471,27 @@ nav{top:60px!important}
       <h3>Brie com Massa Folhada e Castanhas</h3>
       <p>Serve 20 porções.</p>
       <div class="price-big">R$ 270,00</div>
-    </div></article>
+    </div><a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Brie com Massa Folhada e Castanhas" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card"><div class="ph"><img src="img/torta-frango.jpg" alt="Torta de Frango"></div><div class="bd">
       <h3>Torta de Frango</h3>
       <p>Serve 12 a 15 porções.</p>
       <div class="price-big">R$ 135,00</div>
-    </div></article>
+    </div><a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Torta de Frango" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card"><div class="ph"><img src="img/torta-palmito.jpg" alt="Torta de Palmito"></div><div class="bd">
       <h3>Torta de Palmito</h3>
       <p>Serve 12 a 15 porções.</p>
       <div class="price-big">R$ 135,00</div>
-    </div></article>
+    </div><a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Torta de Palmito" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card"><div class="ph"><img src="img/salpicao.jpg" alt="Salpicão"></div><div class="bd">
       <h3>Salpicão</h3>
       <p>Pedido mínimo de 1 kg, sempre em múltiplos de 0,5 kg (1 kg, 1,5 kg, 2 kg…). Indicamos 100g por convidado.</p>
       <div class="price-big">R$ 115,00 / kg</div>
-    </div></article>
+    </div><a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Salpicão" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
     <article class="card"><div class="ph"><img src="img/farofa.jpg" alt="Farofa"></div><div class="bd">
       <h3>Farofa</h3>
       <p>Farinha de mandioca, nozes, damasco e passas. Pedido mínimo de 0,5 kg, sempre em múltiplos de 0,5 kg. Indicamos 50g por convidado.</p>
       <div class="price-big">R$ 90,00 / kg</div>
-    </div></article>
+    </div><a class="buy" href="https://santaconfeiteira-eventos.zerofila.com.br/pedidos" target="_blank" rel="noopener" aria-label="Encomendar Farofa" title="Encomendar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></svg></a></article>
   </div>
 </section>
 
