@@ -223,19 +223,9 @@ footer{background:var(--creme)}
 @media (max-width:760px){.foot{grid-template-columns:1fr!important;text-align:center;justify-items:center;gap:22px!important}.foot>div{display:flex;flex-direction:column;align-items:center}.foot .wm{margin-left:auto;margin-right:auto}.foot .ig-block{order:2}}
 </style>
 </head>
-<body class="locked cine-pre">
-<div id="splash" role="button" aria-label="Toque e encante-se para abrir o site">
-  <div class="door l"><div class="ph"></div></div>
-  <div class="door r"><div class="ph"></div></div>
-  <div class="veil"></div>
-  <img class="logo" src="img/wordmark_cream.png" alt="Santa Confeiteira">
-  <div class="center">
-    <div class="seal-wrap"><img class="seal" src="img/selo.png" alt=""></div>
-    <div class="tap">Toque e encante-se<small>Natal 2026</small></div>
-  </div>
-</div>
+<body>
 <audio id="jingle" src="audio/jingle-natal.mp3" loop preload="auto"></audio>
-<button class="music" id="musicBtn" aria-pressed="false" aria-label="Ligar ou desligar a música">
+<button class="music show" id="musicBtn" aria-pressed="false" aria-label="Ligar ou desligar a música">
   <span class="eq"></span>
   <svg class="on" viewBox="0 0 24 24" fill="currentColor"><path d="M9 18.5a2.5 2.5 0 1 1-2-2.45V6.2l11-2.2v11.5a2.5 2.5 0 1 1-2-2.45V7.1l-7 1.4z"/></svg>
   <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18.5a2.5 2.5 0 1 1-2-2.45V6.2l11-2.2v11.5a2.5 2.5 0 1 1-2-2.45" fill="currentColor" stroke="none"/><path d="M3 3l18 18"/></svg>
@@ -353,27 +343,10 @@ footer{background:var(--creme)}
 
 <script>
 (function(){
-  var splash=document.getElementById('splash'), audio=document.getElementById('jingle'), btn=document.getElementById('musicBtn');
-  var opened=false;
+  var audio=document.getElementById('jingle'), btn=document.getElementById('musicBtn');
   audio.volume=0.45;
-  var seen=false; try{seen=sessionStorage.getItem('sc_aberto')==='1'}catch(e){}
-  if(seen){ splash.style.display='none'; document.body.classList.remove('locked','cine-pre'); btn.classList.add('show'); }
   function setBtn(on){btn.setAttribute('aria-pressed',on?'true':'false')}
   function play(){var p=audio.play(); if(p&&p.then){p.then(function(){setBtn(true)}).catch(function(){setBtn(false)})}}
-  function finish(){
-    splash.classList.add('done'); document.body.classList.remove('locked');
-    btn.classList.add('show');
-    setTimeout(function(){splash.style.display='none'},850);
-  }
-  splash.addEventListener('click',function(){
-    if(opened){finish();return}
-    opened=true; play(); try{sessionStorage.setItem('sc_aberto','1')}catch(e){}
-    splash.classList.add('opening');
-    document.body.classList.add('cine-run');
-    setTimeout(function(){splash.classList.add('go'); document.body.classList.remove('cine-pre')},450);
-    setTimeout(finish,2900);
-    setTimeout(function(){document.body.classList.remove('cine-run')},5200);
-  });
   btn.addEventListener('click',function(){ if(audio.paused){play()} else {audio.pause(); setBtn(false)} });
 
   // revelar ao rolar
